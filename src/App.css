@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:wght@700');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+#root {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow-y: hidden;
+}
+a{
+  text-decoration: none;
+}
+.content{
+  height: 100%;
+  width: 100%;
+}
+
+/* #region SideBar*/
+
+.sideBar {
+  font-family: Inter;
+  width: 200px;
+  height: 100%;
+  background: #363641;
+  padding: 26px 15px 12px;
+  justify-items: left;
+}
+
+.sideBar a {
+  color: #FFF;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#navLabel {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.navButton {
+  border-radius: 3px;
+  border-width: 0.3px;
+  border-style: solid;
+  border-color: transparent;
+  padding: 8px 9px;
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s border-color;
+  gap: 8px;
+}
+
+.navButton.active{
+  
+  border: 0.2px solid #4A4A4A;
+  background: linear-gradient(121deg, rgba(255, 255, 255, 0.15) 6.52%, rgba(255, 255, 255, 0.13) 40.09%, rgba(255, 255, 255, 0.00) 254.42%);
+  backdrop-filter: blur(26px);
+}
+
+.navButton:hover{
+  border-color: rgb(75, 75, 75);
+}
+
+.userFrame {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.082);
+  padding: 9px 20px 7px 12px;
+  margin-bottom: 56px;
+  margin-top: 21px;
+}
+.userFrame div {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-left: 16px;
+  position: relative;
+}
+.userFrame p{
+  line-height: normal;
+  margin: 0;
+}
+.cargo{
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 12px;
+  font-weight: 400;
+}
+.userName{
+  font-size: 15px;
+  color: #FFF;
+}
+
+/* #endregion */
+
+.contentFrame{
+  background: rgba(248,249,249,255);
+  height: 100%;
+  padding: 36px 36px 0px 36px;
+}
+
+/* #region Contratos*/
+
+.contractList{
+  height: 75%;
+  overflow: auto;
+}
+
+.contractButtonBar{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 15px;
+  display: flex;
+  justify-content: start;
+}
+
+.contractButton{
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  padding: 0px 5px 0px 5px;
+  background-color: #FFF;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #006B1E;
+  gap: 15px;
+  font-weight: bold;
+  font-size: small;
+  font-family: 'Inter';
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.contractButton:hover{
+  box-shadow: 4px 4px 6px 0px #06370061;
+}
+
+.contractButton .svgContainer{
+  width: 30px;
+  display: flex;
+  height: 30px;
+  border-radius: 8px;
+  background-color: rgba(217, 241, 224, 1);
+  align-items: center;
+  justify-content: center;
+}
+
+.filterBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: inset 0px -3px 0px rgba(234, 232, 250, 0.20);
+  height: 7%;
+}
+.filterTab{
+  color: #8986A5;
+  font-family: 'Inter';
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  transition: color 0.2s, box-shadow 0.2s;
+  height: 65px;
+}
+[class=filterTab]:hover {
+  box-shadow: inset 0px -3px 0px #73737361;
+}
+.filterTab.active{
+  color: #006B1E;
+  box-shadow: inset 0px -3px 0px #006B1E;
+}
+
+.searchBar{
+  background-color: white;
+  width: 150%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 10%;
+}
+.searchBar input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin-left: 5px;
+  font-family: 'Inter';
+  outline: none;
+}
+.contractSort {
+  background-color: white;
+  color: #006B1E;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.contractFrame {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px 15px 10px 15px
+}
+.contractFrame * {
+  margin: 0;
+  font-family: Inter;
+}
+
+.contractFrame > p {
+  color: #7E7A9C;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.contractId{
+  display: flex;
+}
+.contractId img {
+  background-color: #0043d9;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* #endregion */
+
+
+/*#region Chamados*/
+ .contentChamados{
+  display: flex;
+ }
+
+ .companySidebar{
+  display: flex;
+  width: 30%;
+  height: 100%;
+  padding-top: 15px;
+
+  flex-direction: column;
+ }
+ .companyFrame{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+ }
+.companyDesc * {
+  margin: 0 0 0 10px;
+}
+.companySidebar > h1{
+  margin: 60px 0 0 0;
+}
+.companySidebar > p{
+  font-family: 'Inter';
+  font-size: large;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+.companySearch{
+  border-radius: 8px;
+  background-color: white;
+  padding: 0 10px 0 10px;
+  margin-bottom: 60px;
+}
+
+.companySearch input{
+  outline: none;
+  border: none;
+  height: 40px;
+  font-family: 'Inter';
+  font-size: small;
+  width: 90%;
+}
+.companySearch input::-webkit-input-placeholder{
+  opacity: 0.5;
+  font-weight: bold;
+}
+.companySidebar > h2 {
+  color: #8E8BA7;
+  font-size: large;
+  font-family: 'Inter';
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.companyList {
+  overflow: auto;
+  height: 50%;
+  padding-right: 5px;
+}
+.companyList::after{
+  content: '';
+  display: flex;
+  width: 25%;
+  height: 50px;
+  bottom: 0%;
+  z-index: 9999999;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, .7) 40%, #fff 70%);
+}
+
+.company{
+  color: #8A8AAB;
+  margin-top: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.company.selected{
+  background: rgba(186, 237, 189, 0.70);
+  color: green;
+  font-size: large;
+  border-radius: 8px;
+}
+
+[class=company]:hover {
+  background: rgb(199 199 199 / 35%);
+}
+
+.chamadosContent{
+  display: flex;
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 15px;
+ }
+
+.chamadosButtonBar{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 15px;
+  display: flex;
+  justify-content: start;
+ }
+.chamadosButton{
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  padding: 0px 5px 0px 5px;
+  background-color: #FFF;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #006B1E;
+  gap: 15px;
+  font-weight: bold;
+  font-size: small;
+  font-family: 'Inter';
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.chamadosButton:hover{
+  box-shadow: 4px 4px 6px 0px #06370061;
+}
+
+.chamadosButton .svgContainer{
+  width: 30px;
+  display: flex;
+  height: 30px;
+  border-radius: 8px;
+  background-color: rgba(217, 241, 224, 1);
+  align-items: center;
+  justify-content: center;
+}
+
+.chamadosList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 75%;
+  overflow-y: scroll;
+  row-gap: 25px;
+}
+
+/*#endregion*/
+
+/*#region chamado*/
+.green{
+  background-color: #006B1E;
+}
+
+.grey {
+  background-color: #4F4F4F;
+}
+
+.chamado{
+  background-color: white;
+  width: 48%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  font-family: 'Inter';
+}
+.chamado .header{
+  height: 25%;
+  border-radius: 12px 12px 0 0;
+  padding: 10px 15px 10px 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerLeft, .footerLeft{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chamadoInfo * {
+  
+  margin: 0;
+}
+.chamadoInfo p {
+  opacity: 0.8;
+  font-size: small;
+}
+
+.chamadoInfo h3 {
+  font-weight: bold;
+  font-size: large;
+}
+.header h4 {
+  font-weight: normal;
+}
+.chamadoContent{
+  padding: 15px;
+  height: 35%;
+  overflow: hidden;
+}
+.chamadoContent *{
+  margin: 0;
+}
+.chamadoContent p {
+  font-size: small;
+  margin-top: 5px;
+  color: #A5A5A5;
+}
+
+.chamado .footer {
+  height: 20%;
+  box-shadow: 0px -20px 20px 0px white;
+  border-radius: 15px;
+  padding: 0 15px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerLeft p{
+  font-size: small;
+  font-weight: bold;
+  color: #3E3F43;
+}
+.anexCount{
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(181, 181, 202);
+}
+
+/*#endregion*/
